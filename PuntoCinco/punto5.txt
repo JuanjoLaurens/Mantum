@@ -1,0 +1,16 @@
+1. SELECT * FROM categorias ORDER BY nombre_categoria
+2. FOR each categoria in categorias:
+     a. SELECT * FROM tiendas WHERE id_categoria = categoria.id_categoria ORDER BY nombre_tienda
+     b. Append [categoria.id_categoria, categoria.nombre_categoria, tiendas] to result array
+3. Return result array
+
+Pseudo-codigo:
+
+result_array = []
+categorias = SELECT * FROM categorias ORDER BY nombre_categoria
+
+FOR each categoria in categorias:
+    tiendas = SELECT * FROM tiendas WHERE id_categoria = categoria.id_categoria ORDER BY nombre_tienda
+    result_array.append([categoria.id_categoria, categoria.nombre_categoria, tiendas])
+
+Return result_array
